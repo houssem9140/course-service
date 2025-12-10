@@ -1,0 +1,108 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Course Service SOAP API",
+  "dateExported": "2025-12-10",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "id": "1",
+      "name": "1. Get All Courses",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:getAllCourses/></soap:Body></soap:Envelope>",
+      "notes": "Retrieves all courses from the database"
+    },
+    {
+      "id": "2",
+      "name": "2. Add Course",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:addCourse><code>THUNDER001</code><name>Thunder Test Course</name><description>Testing with Thunder Client</description><credits>3</credits><professor>Dr. Thunder</professor><semester>Spring 2025</semester><maxStudents>20</maxStudents><room>Z101</room><schedule>Sunday 18h-20h</schedule></ser:addCourse></soap:Body></soap:Envelope>",
+      "notes": "Creates a new course - Change code to make it unique each time"
+    },
+    {
+      "id": "3",
+      "name": "3. Get Course by Code",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:getCourseByCode><code>CS101</code></ser:getCourseByCode></soap:Body></soap:Envelope>",
+      "notes": "Searches for a course by its code - Change CS101 to search for different courses"
+    },
+    {
+      "id": "4",
+      "name": "4. Get Course by ID",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:getCourseById><id>1</id></ser:getCourseById></soap:Body></soap:Envelope>",
+      "notes": "Retrieves a specific course by its ID"
+    },
+    {
+      "id": "5",
+      "name": "5. Get Courses by Professor",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:getCoursesByProfessor><professor>Dr. Smith</professor></ser:getCoursesByProfessor></soap:Body></soap:Envelope>",
+      "notes": "Finds all courses taught by a specific professor"
+    },
+    {
+      "id": "6",
+      "name": "6. Get Courses by Semester",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:getCoursesBySemester><semester>Automne 2024</semester></ser:getCoursesBySemester></soap:Body></soap:Envelope>",
+      "notes": "Retrieves all courses in a specific semester"
+    },
+    {
+      "id": "7",
+      "name": "7. Check Room Availability",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:isRoomAvailable><room>A101</room><schedule>Wednesday 10h-12h</schedule></ser:isRoomAvailable></soap:Body></soap:Envelope>",
+      "notes": "Checks if a room is available for a specific time slot"
+    },
+    {
+      "id": "8",
+      "name": "8. Update Course",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:updateCourse><id>1</id><code>CS101_UPDATED</code><name>Updated Computer Science</name><description>Updated description</description><credits>4</credits><professor>Dr. Updated</professor><semester>Spring 2025</semester><maxStudents>35</maxStudents><room>A102</room><schedule>Wednesday 14h-16h</schedule></ser:updateCourse></soap:Body></soap:Envelope>",
+      "notes": "Updates an existing course - Change id to update different courses"
+    },
+    {
+      "id": "9",
+      "name": "9. Delete Course",
+      "method": "POST",
+      "url": "http://localhost:8082/course-service",
+      "headers": {
+        "Content-Type": "text/xml; charset=UTF-8"
+      },
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.course.university.com/\"><soap:Body><ser:deleteCourse><id>999</id></ser:deleteCourse></soap:Body></soap:Envelope>",
+      "notes": "Deletes a course by ID - Change id to delete different courses"
+    }
+  ]
+}
